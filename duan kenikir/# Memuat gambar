@@ -1,0 +1,1 @@
+image = iio.imread("/content/daun kenikir.jpg")  # Ubah nama file sesuai gambar
