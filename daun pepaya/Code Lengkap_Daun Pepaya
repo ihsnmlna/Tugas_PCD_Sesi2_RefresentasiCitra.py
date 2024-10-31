@@ -1,0 +1,38 @@
+import numpy as np
+import imageio.v3 as iio
+import matplotlib.pyplot as plt
+
+# Fungsi untuk menampilkan hasil
+def show_image(img, title="Image"):
+    plt.imshow(img, cmap='gray' if len(img.shape) == 2 else None)
+    plt.title(title)
+    plt.axis('off')
+    plt.show()
+
+# Memuat gambar
+image = iio.imread("/daun pepayaa.jpeg")  # Ubah nama file sesuai gambar
+
+# Menampilkan Channel R, G, B
+R = image.copy()
+R[:, :, 1] = 0
+R[:, :, 2] = 0
+show_image(R, "Red Channel")
+
+G = image.copy()
+G[:, :, 0] = 0
+G[:, :, 2] = 0
+show_image(G, "Green Channel")
+
+B = image.copy()
+B[:, :, 0] = 0
+B[:, :, 1] = 0
+show_image(B, "Blue Channel")
+
+# Konversi ke Grayscale
+gray = np.dot(image[..., :3], [0.299, 0.587, 0.114])
+show_image(gray, "Grayscale")
+
+# Konversi ke Threshold (Biner)
+threshold = 128
+binary = (gray > threshold).astype(np.uint8) * 255
+show_image(binary, "Binary Image")
