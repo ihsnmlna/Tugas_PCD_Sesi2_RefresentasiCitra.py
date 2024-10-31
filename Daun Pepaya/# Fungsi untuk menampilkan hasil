@@ -1,5 +1,0 @@
-def show_image(img, title="Image"):
-    plt.imshow(img, cmap='gray' if len(img.shape) == 2 else None)
-    plt.title(title)
-    plt.axis('off')
-    plt.show()
