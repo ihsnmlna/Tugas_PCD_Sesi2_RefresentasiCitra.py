@@ -1,0 +1,4 @@
+# Konversi ke Threshold (Biner)
+threshold = 128
+binary = (gray > threshold).astype(np.uint8) * 255
+show_image(binary, "Binary Image")
