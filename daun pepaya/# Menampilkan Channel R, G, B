@@ -1,0 +1,14 @@
+R = image.copy()
+R[:, :, 1] = 0
+R[:, :, 2] = 0
+show_image(R, "Red Channel")
+
+G = image.copy()
+G[:, :, 0] = 0
+G[:, :, 2] = 0
+show_image(G, "Green Channel")
+
+B = image.copy()
+B[:, :, 0] = 0
+B[:, :, 1] = 0
+show_image(B, "Blue Channel")
